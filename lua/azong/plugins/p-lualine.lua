@@ -4,6 +4,7 @@ return {
   dependencies = {
     "nvim-tree/nvim-web-devicons",
     "rebelot/kanagawa.nvim",
+    "chrisgrieser/nvim-dr-lsp",
   },
   config = function()
     local kanaColors = require("kanagawa.colors").setup()
@@ -81,6 +82,9 @@ return {
         },
         lualine_x = {
           {
+            require("dr-lsp").lspCount,
+          },
+          {
             "diagnostics",
             sources = { "nvim_lsp" },
             symbols = { error = "󰃤 ", warn = " ", info = "󰋼 ", hint = " " },
@@ -89,7 +93,7 @@ return {
           },
         },
         lualine_y = {
-          { "diff", symbols = { added = " ", modified = " ", removed = " " } },
+          { "diff", symbols = { added = " ", modified = " ", removed = " " } },
           "progress",
         },
         lualine_z = {
