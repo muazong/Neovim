@@ -1,10 +1,10 @@
 local opts = vim.opt
 
 -- File type
-opts.filetype = 'on'
+opts.filetype = "on"
 
 -- Shell
-opts.shell = 'zsh'
+opts.shell = "zsh"
 
 -- Clipboard option
 opts.clipboard:append("unnamedplus")
