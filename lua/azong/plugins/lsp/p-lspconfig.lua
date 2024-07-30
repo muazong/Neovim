@@ -4,38 +4,8 @@ return {
   dependencies = { "williamboman/mason-lspconfig.nvim" },
   config = function()
     local lspconfig = require("lspconfig")
-    local cmp_nvim_lsp = require("cmp_nvim_lsp")
-    local capabilities = cmp_nvim_lsp.default_capabilities()
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
     capabilities.textDocument.completion.completionItem.snippetSupport = true
-    local mason_lspconfig = require("mason-lspconfig")
-
-    local mySigns = {
-      [vim.diagnostic.severity.ERROR] = "ErrorMsg",
-      [vim.diagnostic.severity.WARN] = "WarningMsg",
-      [vim.diagnostic.severity.INFO] = "InfoMsg",
-      [vim.diagnostic.severity.HINT] = "HintMsg",
-    }
-
-    vim.diagnostic.config({
-      signs = {
-        text = {
-          [vim.diagnostic.severity.ERROR] = "",
-          [vim.diagnostic.severity.WARN] = "",
-          [vim.diagnostic.severity.INFO] = "",
-          [vim.diagnostic.severity.HINT] = "󱩎",
-        },
-        texthl = mySigns,
-        linehl = mySigns,
-        numhl = mySigns,
-      },
-      virtual_text = {
-        prefix = "󰄛", -- 󰄛 | 󰩃 | ● | 󰝤
-        spacing = 4,
-      },
-      underline = true,
-      update_in_insert = true,
-      severtity_sort = true,
-    })
 
     local map = vim.keymap.set
     ---@diagnostic disable-next-line: unused-local
@@ -52,7 +22,7 @@ return {
       map("n", "<leader>o", "<cmd>Lspsaga outline<CR>", opts) -- see outline on right hand side
     end
 
-    mason_lspconfig.setup_handlers({
+    require("mason-lspconfig").setup_handlers({
       function(server_name)
         lspconfig[server_name].setup({
           capabilities = capabilities,

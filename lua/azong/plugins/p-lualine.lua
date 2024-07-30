@@ -9,44 +9,42 @@ return {
     local kanaColors = require("kanagawa.colors").setup()
     local palette = kanaColors.palette
 
-    local kanagawa_custom = function()
-      return {
-        normal = {
-          a = { bg = palette.oldWhite, fg = palette.sumiInk2, gui = "boldItalic" },
-          c = { bg = palette.winterBlue, fg = palette.oldWhite, gui = "bold" },
-          b = { bg = palette.sumiInk1, fg = palette.fujiWhite, gui = "italic" },
-        },
-        insert = {
-          a = { bg = palette.springGreen, fg = palette.sumiInk2, gui = "boldItalic" },
-          c = { bg = palette.winterBlue, fg = palette.oldWhite, gui = "bold" },
-          b = { bg = palette.sumiInk1, fg = palette.fujiWhite, gui = "italic" },
-        },
-        visual = {
-          a = { bg = palette.peachRed, fg = palette.winterBlue, gui = "boldItalic" },
-          c = { bg = palette.winterBlue, fg = palette.oldWhite, gui = "bold" },
-          b = { bg = palette.sumiInk1, fg = palette.fujiWhite, gui = "italic" },
-        },
-        replace = {
-          a = { bg = palette.springBlue, fg = palette.winterBlue, gui = "boldItalic" },
-          c = { bg = palette.winterBlue, fg = palette.fujiWhite, gui = "bold" },
-          b = { bg = palette.sumiInk1, fg = palette.fujiWhite, gui = "italic" },
-        },
-        command = {
-          a = { bg = palette.autumnYellow, fg = palette.winterBlue, gui = "boldItalic" },
-          c = { bg = palette.winterBlue, fg = palette.fujiWhite, gui = "bold" },
-          b = { bg = palette.sumiInk1, fg = palette.fujiWhite, gui = "italic" },
-        },
-        inactive = {
-          a = { bg = palette.waveAqua1, fg = palette.winterBlue, gui = "boldItalic" },
-          c = { bg = palette.winterBlue, fg = palette.fujiWhite, gui = "bold" },
-          b = { bg = palette.sumiInk1, fg = palette.fujiWhite, gui = "italic" },
-        },
-      }
-    end
-
     require("lualine").setup({
       options = {
-        theme = kanagawa_custom,
+        theme = function()
+          return {
+            normal = {
+              a = { bg = palette.oldWhite, fg = palette.sumiInk2, gui = "boldItalic" },
+              c = { bg = palette.winterBlue, fg = palette.oldWhite, gui = "bold" },
+              b = { bg = palette.sumiInk1, fg = palette.fujiWhite, gui = "italic" },
+            },
+            insert = {
+              a = { bg = palette.springGreen, fg = palette.sumiInk2, gui = "boldItalic" },
+              c = { bg = palette.winterBlue, fg = palette.oldWhite, gui = "bold" },
+              b = { bg = palette.sumiInk1, fg = palette.fujiWhite, gui = "italic" },
+            },
+            visual = {
+              a = { bg = palette.peachRed, fg = palette.winterBlue, gui = "boldItalic" },
+              c = { bg = palette.winterBlue, fg = palette.oldWhite, gui = "bold" },
+              b = { bg = palette.sumiInk1, fg = palette.fujiWhite, gui = "italic" },
+            },
+            replace = {
+              a = { bg = palette.springBlue, fg = palette.winterBlue, gui = "boldItalic" },
+              c = { bg = palette.winterBlue, fg = palette.fujiWhite, gui = "bold" },
+              b = { bg = palette.sumiInk1, fg = palette.fujiWhite, gui = "italic" },
+            },
+            command = {
+              a = { bg = palette.autumnYellow, fg = palette.winterBlue, gui = "boldItalic" },
+              c = { bg = palette.winterBlue, fg = palette.fujiWhite, gui = "bold" },
+              b = { bg = palette.sumiInk1, fg = palette.fujiWhite, gui = "italic" },
+            },
+            inactive = {
+              a = { bg = palette.waveAqua1, fg = palette.winterBlue, gui = "boldItalic" },
+              c = { bg = palette.winterBlue, fg = palette.fujiWhite, gui = "bold" },
+              b = { bg = palette.sumiInk1, fg = palette.fujiWhite, gui = "italic" },
+            },
+          }
+        end,
         icons_enabled = true,
         section_separators = { left = "", right = "" },
         component_separators = { left = "", right = "" },

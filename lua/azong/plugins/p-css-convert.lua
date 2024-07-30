@@ -1,8 +1,6 @@
 return {
   "cjodo/convert.nvim",
-  dependencies = {
-    "MunifTanjim/nui.nvim",
-  },
+  dependencies = { "MunifTanjim/nui.nvim" },
   ft = { "css", "scss", "javascript", "javascriptreact", "typescript", "typescriptreact" },
   keys = {
     { "<leader>cn", "<cmd>ConvertFindNext<CR>", desc = "Find next convertible unit" },

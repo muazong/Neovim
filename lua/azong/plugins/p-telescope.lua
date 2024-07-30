@@ -8,12 +8,11 @@ return {
     },
     config = function()
       local telescope = require("telescope")
+      local actions = require("telescope.actions")
+      local fb_actions = require("telescope._extensions.file_browser.actions")
 
       local map = vim.keymap.set
       local opts = { silent = true, noremap = true }
-
-      local actions = require("telescope.actions")
-      local fb_actions = require("telescope._extensions.file_browser.actions")
 
       map("n", "<C-f>", "<CMD>Telescope find_files<CR>", opts)
       map("n", "<C-g>", "<CMD>Telescope live_grep<CR>", opts)
@@ -27,7 +26,6 @@ return {
       map("n", "<A-b>", "<CMD>:Telescope file_browser<CR>", opts)
 
       telescope.setup({
-        -- Defaults
         defaults = {
           prompt_prefix = "  ",
           selection_caret = " ",
@@ -54,7 +52,6 @@ return {
             },
           },
         },
-        -- Pickers
         pickers = {
           find_files = {
             previewer = false,
@@ -74,7 +71,6 @@ return {
             previewer = false,
           },
         },
-        -- Extensions
         extensions = {
           file_browser = {
             initial_mode = "normal",
@@ -108,8 +104,8 @@ return {
         },
       })
 
-      telescope.load_extension("file_browser") -- File browser
-      telescope.load_extension("vim_bookmarks") -- Bookmarks
+      telescope.load_extension("file_browser")
+      telescope.load_extension("vim_bookmarks")
     end,
   },
   { -- Telescope Bookmark
@@ -119,13 +115,11 @@ return {
       "tom-anders/telescope-vim-bookmarks.nvim",
     },
     config = function()
-      local map = vim.keymap.set
-
-      vim.g.bookmark_sign = "♥"
+      vim.g.bookmark_sign = "󰟙"
       vim.g.bookmark_highlight_lines = 1
 
-      map("n", "ma", "<Cmd> lua require('telescope').extensions.vim_bookmarks.all() <CR>")
-      map("n", "mc", "<Cmd> lua require('telescope').extensions.vim_bookmarks.current_file() <CR>")
+      vim.keymap.set("n", "ma", "<Cmd> lua require('telescope').extensions.vim_bookmarks.all() <CR>")
+      vim.keymap.set("n", "mc", "<Cmd> lua require('telescope').extensions.vim_bookmarks.current_file() <CR>")
     end,
   },
 }

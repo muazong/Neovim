@@ -74,7 +74,6 @@ return {
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
         ["<C-j>"] = cmp.mapping.confirm({ select = true }),
       }),
-      -- sources for autocompletion
       sources = cmp.config.sources({
         { name = "luasnip" },
         { name = "codeium" },
@@ -83,7 +82,6 @@ return {
         { name = "path" },
         { name = "nvim_lsp_signature_help" },
       }),
-      -- configure lspkind for vs-code like icons
       formatting = {
         format = lspkind.cmp_format({
           mode = "symbol_text", -- 'text', 'text_symbol', 'symbol_text', 'symbol'
@@ -147,14 +145,12 @@ return {
         },
       },
     })
-
     cmp.setup.cmdline("/", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = {
         { name = "buffer" },
       },
     })
-
     cmp.setup.cmdline(":", {
       mapping = cmp.mapping.preset.cmdline(),
       sources = cmp.config.sources({
@@ -164,7 +160,6 @@ return {
       }),
       matching = { disallow_symbol_nonprefix_matching = false },
     })
-
     cmp.setup.filetype({ "html" }, {
       sources = cmp.config.sources({
         { name = "cmp_bootstrap" },

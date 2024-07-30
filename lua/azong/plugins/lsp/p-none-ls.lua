@@ -10,7 +10,7 @@ return {
 
       null_ls.setup({
         sources = {
-          -- formatting
+          -- Formatting
           -- formatting.prettier,
           formatting.prettierd,
           formatting.stylua,
@@ -19,7 +19,7 @@ return {
           -- formatting.black,
           -- formatting.isort,
 
-          -- linter
+          -- Linter
           diagnostics.tidy, -- html
         },
         debug = false,
@@ -48,11 +48,10 @@ return {
     event = "BufEnter",
     dependencies = {
       "williamboman/mason.nvim",
-      "zeioth/none-ls-external-sources.nvim", -- To install a external sources library.
+      "zeioth/none-ls-external-sources.nvim",
     },
     opts = {
       external_sources = {
-        -- To specify where to find a external source.
         "none-ls-external-sources.formatting.reformat_gherkin",
       },
     },

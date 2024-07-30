@@ -5,7 +5,6 @@ return {
   config = function()
     local ignore_filetypes = { "neo-tree", "sagaoutline", "lazy", "NvimTree" }
     local ignore_buftypes = { "nofile", "prompt", "popup" }
-
     local augroup = vim.api.nvim_create_augroup("FocusDisable", { clear = true })
 
     vim.api.nvim_create_autocmd("WinEnter", {
@@ -19,7 +18,6 @@ return {
       end,
       desc = "Disable focus autoresize for BufType",
     })
-
     vim.api.nvim_create_autocmd("FileType", {
       group = augroup,
       callback = function(_)
@@ -32,7 +30,6 @@ return {
       desc = "Disable focus autoresize for FileType",
     })
 
-    -- Focus setup
     require("focus").setup({
       enable = true,
       commands = true,

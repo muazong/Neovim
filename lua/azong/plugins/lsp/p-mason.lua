@@ -6,11 +6,7 @@ return {
     "jayp0521/mason-null-ls.nvim",
   },
   config = function()
-    local mason = require("mason")
-    local mason_lspconfig = require("mason-lspconfig")
-    local mason_null_ls = require("mason-null-ls")
-
-    mason.setup({
+    require("mason").setup({
       ui = {
         icons = {
           package_installed = "✓",
@@ -19,8 +15,7 @@ return {
         },
       },
     })
-
-    mason_lspconfig.setup({
+    require("mason-lspconfig").setup({
       ensure_installed = {
         "tsserver",
         "html",
@@ -36,8 +31,7 @@ return {
         "css_variables",
       },
     })
-
-    mason_null_ls.setup({
+    require("mason-null-ls").setup({
       ensure_installed = {
         -- "prettier",
         "prettierd",
