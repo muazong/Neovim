@@ -34,7 +34,7 @@ return {
           },
         },
         custom_areas = {
-          right = function()
+          --[[ right = function()
             local result = {}
             local severity = vim.diagnostic.severity
             local error = #vim.diagnostic.get(0, { severity = severity.ERROR })
@@ -56,17 +56,28 @@ return {
             end
 
             return result
-          end,
+          end, ]]
         },
         ---@diagnostic disable-next-line: unused-local
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
           if context.buffer:current() then
-            local s = " "
-            for e, n in pairs(diagnostics_dict) do
-              local sym = e == "error" and "󰃤" or (e == "warning" and " " or " ")
-              s = s .. n .. " " .. sym .. " "
+            local result = " "
+            for diagnostic, total in pairs(diagnostics_dict) do
+              local symbol
+
+              if diagnostic == "error" then
+                symbol = ""
+              elseif diagnostic == "warning" then
+                symbol = ""
+              elseif diagnostic == "info" then
+                symbol = ""
+              elseif diagnostic == "hint" then
+                symbol = "󱩎"
+              end
+
+              result = result .. symbol .. "󰿟" .. total .. " "
             end
-            return s
+            return result
           end
           return ""
         end,
