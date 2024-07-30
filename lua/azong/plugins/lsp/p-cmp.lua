@@ -6,6 +6,7 @@ return {
     "hrsh7th/cmp-path",
     "hrsh7th/cmp-nvim-lsp",
     "hrsh7th/cmp-cmdline",
+    "hrsh7th/cmp-calc",
     "hrsh7th/cmp-nvim-lsp-signature-help",
     "lukas-reineke/cmp-under-comparator",
     "rambhosale/cmp-bootstrap.nvim",
@@ -75,11 +76,12 @@ return {
         ["<C-j>"] = cmp.mapping.confirm({ select = true }),
       }),
       sources = cmp.config.sources({
-        { name = "luasnip" },
+        { name = "luasnip", option = { show_autosnippets = true }, priority = 1000 },
         { name = "codeium" },
         { name = "nvim_lsp" },
         { name = "buffer" },
         { name = "path" },
+        { name = "calc" },
         { name = "nvim_lsp_signature_help" },
       }),
       formatting = {
@@ -163,11 +165,12 @@ return {
     cmp.setup.filetype({ "html" }, {
       sources = cmp.config.sources({
         { name = "cmp_bootstrap" },
-        { name = "luasnip" },
+        { name = "luasnip", option = { show_autosnippets = true }, priority = 1000 },
         { name = "codeium" },
         { name = "nvim_lsp" },
         { name = "buffer" },
         { name = "path" },
+        { name = "calc" },
         { name = "nvim_lsp_signature_help" },
       }),
     })
