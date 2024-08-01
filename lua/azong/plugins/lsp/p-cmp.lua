@@ -12,9 +12,13 @@ return {
     "rambhosale/cmp-bootstrap.nvim",
     {
       "Exafunction/codeium.nvim",
-      cmd = "Codeium",
-      build = ":Codeium Auth",
-      opts = {},
+      dependencies = {
+        "nvim-lua/plenary.nvim",
+        "hrsh7th/nvim-cmp",
+      },
+      config = function()
+        require("codeium").setup({})
+      end,
     },
     {
       "L3MON4D3/LuaSnip",
