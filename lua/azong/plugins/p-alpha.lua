@@ -7,14 +7,12 @@ return {
 
     -- Set header
     dashboard.section.header.val = {
-      "                                                     ",
       "  ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ ",
       "  ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ ",
       "  ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ ",
       "  ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ ",
       "  ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ ",
       "  ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ ",
-      "                                                     ",
     }
 
     -- Set menu
@@ -29,7 +27,7 @@ return {
     }
 
     -- Set footer
-    dashboard.section.footer.val = { "  Nvim 0.11.0-dev " }
+    dashboard.section.footer.val = { " Nvim v0.11.0-dev" }
 
     -- Send config to alpha
     alpha.setup(dashboard.opts)
