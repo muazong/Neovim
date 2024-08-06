@@ -9,6 +9,9 @@ opts.shell = "zsh"
 -- Clipboard option
 opts.clipboard:append("unnamedplus")
 
+-- Disable mouse
+opts.mouse = ""
+
 -- Line options
 opts.number = true
 opts.cursorline = true
