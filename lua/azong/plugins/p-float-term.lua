@@ -12,7 +12,7 @@ return {
         width = 90,
         height = 26,
         winblend = 0,
-        zindex = 10,
+        zindex = 100,
       },
     })
   end,
