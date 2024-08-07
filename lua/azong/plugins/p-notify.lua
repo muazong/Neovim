@@ -7,9 +7,8 @@ return {
     opts = {
       timeout = 1000,
       fps = 60,
-      level = 2,
       render = "wrapped-compact",
-      always_check = true,
+      always_check = false,
       top_down = true,
       stages = "fade_in_slide_out",
       time_formats = {
